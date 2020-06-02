@@ -20,6 +20,7 @@ class Solution:
         if root:
             left_val = root.left.val if root.left else leftLimit
             right_val = root.right.val if root.right else rightLimit
+            print ('values:' , left_val, root.val, right_val)
             if left_val < root.val < right_val:
                 return self.checkValidity(root.left, leftLimit, root.val) and self.checkValidity(root.right, root.val,
                                                                                                  rightLimit)
@@ -50,7 +51,5 @@ class Solution:
 solution = Solution()
 tree = solution.get_tree([10,5,15,None,None,6,20])
 print ('tree:', tree)
-tree.right.left = None
-tree.left.left = None
 result = solution.isValidBST(tree)
 print (result)
