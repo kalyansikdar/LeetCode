@@ -16,7 +16,7 @@ class Solution:
         return result_matrix[n - 1][m - 1]
 
     # This solution is better than the previous one
-    def uniquePathsBetter(self, m: int, n: int) -> int:
+    def uniquePaths_Better(self, m: int, n: int) -> int:
         result_matrix = [[1] * m for i in range(n)]
         #  all boxes in first row and column should have 1  as there is 1 way to go into those, from TOP and from LEFT
         # rest of the boxes will be updated by the code below

@@ -32,7 +32,10 @@ class Solution:
         return False
 
 
-board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
+board = [["A","B","C","E"],
+         ["S","F","C","S"],
+         ["A","D","E","E"]]
 word = "ABCCED"
+word = "SCS"
 solution = Solution()
 print (solution.exist(board, word))
