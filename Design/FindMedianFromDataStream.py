@@ -7,7 +7,7 @@ class MedianFinder:
 
     def addNum(self, num: int) -> None:
         self.stream.append(num)
-        self.stream.sort()
+        self.stream.sort()      # needs to be sorted as it's an ordered integer list
 
     def findMedian(self) -> float:
         mid = (0 + len(self.stream)) // 2
