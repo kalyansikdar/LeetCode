@@ -1,27 +1,33 @@
 class Solution:
     def findOrder(self, numCourses: int, prerequisites):
-        tracker = [0 for i in range(numCourses)]
+        preReqTracker = [0 for i in range(numCourses)]
         stack, visited = [], []
 
         for i in prerequisites:
-            tracker[i[0]] += 1
+            preReqTracker[i[0]] += 1      # tracks how many prerequisites for each courses
 
-        for idx, i in enumerate(tracker):
-            if i == 0:
+        for idx, i in enumerate(preReqTracker):
+            if i == 0:      # if any course does not have any prerequisite it can be added to the queue
                 stack.append(idx)
 
         while stack:
-            element = stack.pop()
-            if element not in visited:
-                visited.append(element)
+            curr = stack.pop()
+            if curr not in visited:
+                visited.append(curr)
 
             for i in prerequisites:
-                if element == i[1]:
-                    tracker[i[0]] -= 1
-                    if tracker[i[0]] == 0 and i[0] not in stack:
+                if curr == i[1]:
+                    preReqTracker[i[0]] -= 1      # because the prerequisite is fulfill now
+                    if preReqTracker[i[0]] == 0 and i[0] not in stack:
                         stack.append(i[0])
 
         if len(visited) == numCourses:
             return visited
         else:
             return []
+
+
+solution = Solution()
+numCourses = 4
+prerequisites = [[1,0],[2,0],[3,1],[3,2]]
+print('Result: ', solution.findOrder(numCourses, prerequisites))
