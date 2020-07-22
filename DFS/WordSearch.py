@@ -32,10 +32,15 @@ class Solution:
         return False
 
 
-board = [["A","B","C","E"],
-         ["S","F","C","S"],
-         ["A","D","E","E"]]
+board = [["A", "B", "C", "E"],
+         ["S", "F", "C", "S"],
+         ["A", "D", "E", "E"]]
 word = "ABCCED"
 word = "SCS"
+
 solution = Solution()
-print (solution.exist(board, word))
+print(solution.exist(board, word))
+####### Hatke test case ########
+# [["C","A","A"],["A","A","A"],["B","C","D"]]
+# "AAB"
+# expected answer: True
