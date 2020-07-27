@@ -1,5 +1,5 @@
 class Solution:
-    def searchInsert(self, nums: List[int], target: int) -> int:
+    def searchInsert(self, nums, target: int) -> int:
         if not nums:
             return None
         else:
