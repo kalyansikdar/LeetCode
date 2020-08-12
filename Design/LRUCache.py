@@ -28,6 +28,32 @@ class LRUCache:
             del self.cache[lru_item[0]]
             self.count -= 1
 
+import collections
+class LRUCache_better:
+
+    def __init__(self, capacity: int):
+        self.capacity = capacity
+        self.cache = collections.OrderedDict()      # This maintains the order within the dictionary
+
+    def get(self, key: int) -> int:
+        if key not in self.cache:
+            return -1
+        else:
+            item = self.cache.pop(key)      # if found, pop the item and return it. But again put the popped item at
+            # the end of the cache. As it's most recently used.
+            self.cache[key] = item
+            return item
+
+    def put(self, key: int, value: int) -> None:
+        if key in self.cache:
+            self.cache.pop(key)     # if the key is available already, pop it and again put it at the end.
+        else:
+            if len(self.cache) == self.capacity:        # if the capacity is full, pop the first item from cache and
+                # again put it at the end
+                self.cache.popitem(last=False)
+
+        self.cache[key] = value
+
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)
