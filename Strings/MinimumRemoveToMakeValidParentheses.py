@@ -36,4 +36,5 @@ class Solution:
 
 solution = Solution()
 s = "())()((("
+s = "(a(b(c)d)"
 print (solution.minRemoveToMakeValid(s))
