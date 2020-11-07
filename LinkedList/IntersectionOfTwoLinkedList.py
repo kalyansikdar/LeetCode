@@ -39,6 +39,9 @@ class Solution:
         """
         Check the comment which explains the solution visially -
         https://leetcode.com/problems/intersection-of-two-linked-lists/discuss/49785/Java-solution-without-knowing-the-difference-in-len!
+
+        Time complexity : O(m+n), where m and n are number of elements in the linked list
+        Space complexity : O(1)
         """
         currA = headA
         currB = headB
