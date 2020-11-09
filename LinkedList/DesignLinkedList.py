@@ -94,6 +94,18 @@ class MyLinkedList:
 
         return result
 
+    def reverse(self):
+        curr = self.head
+        nxt = prev = None
+
+        while curr:
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+
+        self.head = prev    # setting the head of the linked list after reversal
+
 
 # Your MyLinkedList object will be instantiated and called as such:
 ll = MyLinkedList()
@@ -146,3 +158,5 @@ ll.addAtIndex(5, 0)
 print(ll)
 ll.addAtHead(6)
 print(ll)
+ll.reverse()
+print('Reversed LinkedList: ', ll)
