@@ -41,6 +41,58 @@ class Solution:
 
         return True
 
+    def print(self, head):
+        curr = head
+
+        while curr:
+            print(curr.val)
+            curr = curr.next
+
+    def isPalindrome_better(self, head: ListNode) -> bool:
+        """
+        Algorithm:
+        1. Apply fast and slow runner to find the middle of the list. When fast runner reaches last node,
+        slow will be on the middle node or middle-before node.
+        2. If fast, means length of list is odd, hence, move slow another node
+        3. Reverse list from slow pointer and assign to slow, so it will point to the reversed list
+        4. Assign head to fast (re-initializing)
+        5. Check if each node's value is same
+        :param head:
+        :return:
+        """
+        slow = fast = head
+
+        while fast and fast.next:
+            fast = fast.next.next
+            slow = slow.next
+
+        if fast:    # if length of list is odd, then fast will be on the last node, so, slow will be just one node
+            # before middle node. Else fast will be NULL.
+            slow = slow.next
+
+        slow = self.reverse(slow)   # reverse the list from middle and assign it to slow
+        fast = head     # re-initialize head to fast
+
+        while slow:
+            if slow.val != fast.val:
+                return False
+            slow = slow.next
+            fast = fast.next
+
+        return True
+
+    def reverse(self, head):
+        curr = head
+        prev = next = None
+
+        while curr:
+            next = curr.next
+            curr.next = prev
+            prev = curr
+            curr = next
+
+        return prev
+
 
 linkedList = LinkedList(None)
 linkedList.addAtEnd(3)

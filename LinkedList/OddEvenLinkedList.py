@@ -30,6 +30,12 @@ class Solution:
         return odd.next
 
     def oddEvenList_better(self, head: ListNode) -> ListNode:
+        """
+        Time complexity : O(n). There are total nn nodes and we visit each node once.
+        Space complexity : O(1). All we need is the four pointers.
+        :param head:
+        :return:
+        """
         if not head:
             return None
 
