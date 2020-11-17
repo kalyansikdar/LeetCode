@@ -57,6 +57,9 @@ class Solution:
         3. Reverse list from slow pointer and assign to slow, so it will point to the reversed list
         4. Assign head to fast (re-initializing)
         5. Check if each node's value is same
+
+        Time complexity: O(N)
+        Space complexity: O(1)
         :param head:
         :return:
         """
