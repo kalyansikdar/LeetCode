@@ -6,7 +6,7 @@ from typing import List
 class Solution:
     def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:
         distanceList = []
-        heapq.heapify(distanceList)     # creates a min-heap
+        heapq.heapify(distanceList)  # creates a min-heap
         for point in points:
             # pushing values in negative basically turns the heap into a max heap
             heapq.heappush(distanceList, (-self.findDistanceFromOrigin(point), point))

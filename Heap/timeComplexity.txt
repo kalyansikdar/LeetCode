@@ -1,0 +1,15 @@
+Source: https://www.youtube.com/watch?v=HqPJF2L5h9U
+
+Insertion:
+Heap is a binary tree. Height of binary tree is - LogN. While insertion, each node is first inserted as a leaf and then
+moved up by swapping. Total maximum LogN numbers of swaps are possible as the height of the tree is Logn. But if the
+node is the smallest (in case of max heap), then no swaps are needed - O(1). Hence, the time complexity of insertion into a
+min/max heap is O(1) to O(logN).
+
+Deletion:
+Same as insertion
+
+Create a heap - O(nlogn).
+    Mininum time taken for creating a heap - O(n), using heapify
+
+Heapify - O(n)
