@@ -11,7 +11,7 @@ class Solution:
             if ch not in mappings:
                 stack.append(ch)
             else:
-                if stack and stack[-1] == mappings[ch]:     # for case s = "["
+                if stack and stack[-1] == mappings[ch]:  # for case s = "["
                     stack.pop()
                 else:
                     return False
@@ -21,4 +21,6 @@ class Solution:
 
 solution = Solution()
 s = "()[]{}"
-print ('Result: ', solution.isValid(s))
+assert solution.isValid(s) == True
+s = ")(){}"
+assert solution.isValid(s) == False
