@@ -13,7 +13,7 @@ class Solution:
             else:
                 if stack and stack[-1] == mappings[ch]:  # for case s = "["
                     stack.pop()
-                else:
+                else:   # for case s = ")(){}"
                     return False
 
         return len(stack) == 0

@@ -21,7 +21,30 @@ class Solution:
 
         return res
 
+    def longestPalindrome_slightly_different(self, s: str) -> str:
+        """Time complexity is O(N) here as it's going over the input once"""
+        if not s:
+            return ""
+        if len(s) == 1:
+            return s
+
+        length = 0
+
+        for i in range(len(s)):
+            len1 = self.checkPalindrome(s, i, i)
+            len2 = self.checkPalindrome(s, i, i + 1)
+
+            if max(len1, len2) > length:
+                i_val = i
+                length = max(len1, len2)
+
+        start = i_val - (length - 1) // 2
+        end = i_val + length // 2
+
+        return s[start:end + 1]
+
     def checkPalindrome(self, s, start, end):
+        """Time complexity of this function is O(N) as it's trying to go through the whole input"""
         # concept is to start from the middle and expand out
         while start >= 0 and end < len(s) and s[start] == s[end]:
             start -= 1
@@ -35,3 +58,4 @@ s = "racecar"
 s = "babbcxcbbabb"
 result = solution.longestPalindrome(s)
 print (result)
+assert solution.longestPalindrome("babad") == "bab"
