@@ -1,0 +1,4 @@
+For finding shortest path to destination in Graph, we should NOT use DFS, we can have exponential unique paths in graph.
+    DFS will run in exponential time.
+    BFS will run in polynomial time.
+But in trees, we can have unique paths between nodes.
