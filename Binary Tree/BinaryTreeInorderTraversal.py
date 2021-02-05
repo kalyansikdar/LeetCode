@@ -24,7 +24,7 @@ class Solution:
 
         while curr or stack:
             while curr:
-                # go left till root is not none
+                # go left till root is not null
                 stack.append(curr)
                 curr = curr.left
 
