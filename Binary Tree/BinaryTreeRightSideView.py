@@ -6,6 +6,10 @@
 #         self.right = right
 class Solution:
     def rightSideView(self, root):
+        """
+        Time complexity is O(n) as it goes through all the nodes. Space complexity is O(level) as the result stack
+        stores only the result nodes, which can be only one per level
+        """
         result = []
         if not root:
             return []

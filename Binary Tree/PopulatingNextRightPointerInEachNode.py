@@ -25,7 +25,7 @@ class Solution:
 
                 if curr.next:
                     curr.right.next = curr.next.left
-
+                # this has to be outside if, unless at first node itself it will be stuck
                 curr = curr.next
 
             leftNode = leftNode.left
