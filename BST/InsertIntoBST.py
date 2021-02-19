@@ -17,3 +17,27 @@ class Solution:
                 root.left = self.insertIntoBST(root.left, val)
 
         return root
+
+    def insertIntoBST_iterative(self, root: TreeNode, val: int) -> TreeNode:
+            if not root:
+                return TreeNode(val)
+
+            curr = root
+            queue = [curr]
+
+            while curr:
+                if curr.left and val < curr.val:
+                    curr = curr.left
+
+                elif curr.right and val > curr.val:
+                    curr = curr.right
+                else:
+                    break
+
+            newNode = TreeNode(val)
+            if val > curr.val:
+                curr.right = newNode
+            else:
+                curr.left = newNode
+
+            return root
