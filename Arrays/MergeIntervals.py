@@ -5,7 +5,9 @@ class Solution:
         :param intervals:
         :return:
         """
-        intervals = sorted(intervals, key=lambda kv: kv[0])     # list needs to be sorted so that all element can be
+        intervals = sorted(
+            intervals, key=lambda kv: kv[0]
+        )  # list needs to be sorted so that all element can be
         # checked in O(N) later. However, sorting is NLogN here
         i = 1
 
@@ -22,5 +24,5 @@ class Solution:
 
 
 solution = Solution()
-intervals = [[1,3],[2,6],[8,10],[15,18]]
-print (solution.merge(intervals))
+intervals = [[1, 3], [2, 6], [8, 10], [15, 18]]
+print(solution.merge(intervals))

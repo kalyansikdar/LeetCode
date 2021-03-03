@@ -20,6 +20,6 @@ class Solution:
 
 
 solution = Solution()
-assert solution.numPairsDivisibleBy60([30,20,150,100,40]) == 3
-assert solution.numPairsDivisibleBy60([60,60,60]) == 3
+assert solution.numPairsDivisibleBy60([30, 20, 150, 100, 40]) == 3
+assert solution.numPairsDivisibleBy60([60, 60, 60]) == 3
 assert solution.numPairsDivisibleBy60([]) == 0

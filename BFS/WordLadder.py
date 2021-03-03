@@ -20,8 +20,8 @@ class Solution:
                 return currSeqNo
 
             for i in range(len(currWord)):
-                for c in 'abcdefghijklmnopqrstuvwxyz':
-                    adjacentWord = currWord[:i] + c + currWord[i + 1:]
+                for c in "abcdefghijklmnopqrstuvwxyz":
+                    adjacentWord = currWord[:i] + c + currWord[i + 1 :]
                     if adjacentWord in wordList:
                         wordList.remove(adjacentWord)
                         queue.append(Obj(adjacentWord, currSeqNo + 1))
@@ -45,8 +45,8 @@ class Solution:
             currWord, currSeqNo = curr[0], curr[1]
 
             for i in range(len(currWord)):
-                for c in 'abcdefghijklmnopqrstuvwxyz':
-                    adjacentWord = currWord[:i] + c + currWord[i + 1:]
+                for c in "abcdefghijklmnopqrstuvwxyz":
+                    adjacentWord = currWord[:i] + c + currWord[i + 1 :]
                     # skipping if the adjacent word is same as current word, words are not repeated
                     if adjacentWord == currWord:
                         continue
@@ -64,9 +64,9 @@ class Solution:
 solution = Solution()
 beginWord = "hit"
 endWord = "cog"
-wordList =["hot","dot","dog","lot","log","cog"]
+wordList = ["hot", "dot", "dog", "lot", "log", "cog"]
 assert solution.ladderLength(beginWord, endWord, wordList) == 5
-wordList = ["hot","dot","dog","lot","log"]
+wordList = ["hot", "dot", "dog", "lot", "log"]
 assert solution.ladderLength(beginWord, endWord, wordList) == 0
 beginWord = "a"
 endWord = "c"

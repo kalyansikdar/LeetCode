@@ -47,13 +47,13 @@ class Solution:
 
 
 solution = Solution()
-digits = [1,2,3]
-assert solution.plusOne(digits) == [1,2,4]
-digits = [4,3,2,1]
-assert solution.plusOne(digits) == [4,3,2,2]
+digits = [1, 2, 3]
+assert solution.plusOne(digits) == [1, 2, 4]
+digits = [4, 3, 2, 1]
+assert solution.plusOne(digits) == [4, 3, 2, 2]
 digits = [0]
 assert solution.plusOne(digits) == [1]
-digits = [4,5,9,9]
-assert solution.plusOne(digits) == [4,6,0,0]
+digits = [4, 5, 9, 9]
+assert solution.plusOne(digits) == [4, 6, 0, 0]
 digits = [9]
-assert solution.plusOne(digits) == [1,0]
+assert solution.plusOne(digits) == [1, 0]

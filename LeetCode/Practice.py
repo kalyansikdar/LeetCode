@@ -7,10 +7,10 @@ class Solution:
         for i in range(0, len(s)):
             for j in range(0, len(s)):
                 if self.isPalindrome(s, i, j):
-                    palindromes.append(s[i:j + 1])
-                    if (j-i+1) > lpsLen:
-                        lpsLen = j-i+1
-                        lps = s[i:j+1]
+                    palindromes.append(s[i : j + 1])
+                    if (j - i + 1) > lpsLen:
+                        lpsLen = j - i + 1
+                        lps = s[i : j + 1]
 
         sortedP = sorted(palindromes, key=lambda x: len(x))
         print(sortedP)
@@ -30,5 +30,5 @@ class Solution:
 
 
 solution = Solution()
-s= "babad"
+s = "babad"
 assert solution.longestPalindrome(s) == "bab"

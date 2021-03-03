@@ -24,8 +24,14 @@ class Solution:
 
             for dir in directions:
                 currI, currJ = curr[0][0] + dir[0], curr[0][1] + dir[1]
-                if currI < 0 or currI >= len(grid) or currJ < 0 or currJ >= len(grid[0]) or grid[currI][currJ] != 1 or (
-                currI, currJ) in visited:
+                if (
+                    currI < 0
+                    or currI >= len(grid)
+                    or currJ < 0
+                    or currJ >= len(grid[0])
+                    or grid[currI][currJ] != 1
+                    or (currI, currJ) in visited
+                ):
                     continue
                 else:
                     grid[currI][currJ] = 2
@@ -40,8 +46,8 @@ class Solution:
 
 
 solution = Solution()
-grid1 = [[2,1,1],[1,1,0],[0,1,1]]        # output = 4
-grid2 = [[2,1,1],[0,1,1],[1,0,1]]        # output = -1
-grid3 = [[0,2]]                         # output = 0
-grid4 = [[0,2,2], [0,2,1]]              # output 1
-print ('Result', solution.orangesRotting(grid1))
+grid1 = [[2, 1, 1], [1, 1, 0], [0, 1, 1]]  # output = 4
+grid2 = [[2, 1, 1], [0, 1, 1], [1, 0, 1]]  # output = -1
+grid3 = [[0, 2]]  # output = 0
+grid4 = [[0, 2, 2], [0, 2, 1]]  # output 1
+print("Result", solution.orangesRotting(grid1))

@@ -9,7 +9,9 @@ class Solution:
         while True:
             slow = nums[slow]
             fast = nums[nums[fast]]
-            if slow == fast:  # means the overlapping position is found, and after k steps the loop has started. also
+            if (
+                slow == fast
+            ):  # means the overlapping position is found, and after k steps the loop has started. also
                 # after k steps of the starting position loop started
                 break
 

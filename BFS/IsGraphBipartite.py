@@ -3,7 +3,9 @@ from typing import List
 
 class Solution:
     def isBipartite(self, graph: List[List[int]]) -> bool:
-        colors = [0 for i in range(len(graph))] # This list to mark each node with color 1 or -1. No two adjacent
+        colors = [
+            0 for i in range(len(graph))
+        ]  # This list to mark each node with color 1 or -1. No two adjacent
         # node should have the same color
 
         for i in range(len(graph)):
@@ -32,5 +34,5 @@ class Solution:
 
 
 solution = Solution()
-assert solution.isBipartite([[1,3],[0,2],[1,3],[0,2]]) == True
-assert solution.isBipartite([[1,2,3],[0,2],[0,1,3],[0,2]]) == False
+assert solution.isBipartite([[1, 3], [0, 2], [1, 3], [0, 2]]) == True
+assert solution.isBipartite([[1, 2, 3], [0, 2], [0, 1, 3], [0, 2]]) == False

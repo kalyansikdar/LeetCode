@@ -23,6 +23,6 @@ class Solution:
 
 
 solution = Solution()
-result = solution.merge([1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3)
+result = solution.merge([1, 2, 3, 0, 0, 0], m=3, nums2=[2, 5, 6], n=3)
 # assert solution.merge([1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3) == [1,2,2,3,5,6]
 # assert solution.merge([2,0], 1, [1], 1) == [1,2]

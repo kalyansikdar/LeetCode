@@ -44,4 +44,4 @@ nums = [-1, 0, 1, 2, -1, -4]
 # Below example is for duplicate issue
 # nums = [-2, 0, 0, 2, 2]
 result = solution.threeSum(nums)
-print (result)
+print(result)
