@@ -18,6 +18,6 @@ class Solution:
 
 
 solution = Solution()
-nums = [4,5,6,7,0,1,2]
-nums = [6,7,0,1,2,4,5]
-print (solution.findMin(nums))
+nums = [4, 5, 6, 7, 0, 1, 2]
+nums = [6, 7, 0, 1, 2, 4, 5]
+print(solution.findMin(nums))

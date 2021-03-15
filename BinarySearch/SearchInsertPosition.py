@@ -8,7 +8,9 @@ class Solution:
     def binarySearch(self, nums, target, start, end):
         mid = start + (end - start) // 2
 
-        while start <= end:     # as we are using <= start position can actually be greater than end at the end of the
+        while (
+            start <= end
+        ):  # as we are using <= start position can actually be greater than end at the end of the
             # iteration
             if nums[mid] == target:
                 return mid
