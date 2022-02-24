@@ -1,0 +1,49 @@
+Catalan Problems:
+1. The number of valid parenthesis expressions that consists of N left parenthesis and N right parenthesis is Nth CN.
+Note: For an expression to be valid, number of right parenthesis can never be greater than number of left parenthesis.
+
+N = 1: ()   -> 1
+N = 2: ()() | (())  -> 2
+N = 3: ((()))   |   (()())  |   ()(())  |   ()()()  |   (())()  -> 5
+
+Counting the number of valid parenthesis is catalan number problem. Catalan number problems are counting problems.
+
+2. A rooted binary tree with one root node, where each node has either 0 or 2 branches descending from it.
+A node is internal if it has 2 nodes coming out from it. How many rooted binary tree are there with N internal nodes?
+Note: Same as Nth catalan number
+N = 1:  *
+N = 2:
+    *                    *
+   / \                  / \
+  *   *                *   *
+     /  \             / \
+    *    *           *   *
+
+N = 3:
+    *               *             *                 *           *
+   /               / \             \               /              \
+  *               *   *             *             *                *
+ /                                   \             \              /
+*                                     *             *            *
+
+3. Count ways to divide circle using N non-intersecting chords.
+N = 1:
+N = 2:
+(1-2), (3-4)
+(1-4), (2-3)
+
+N = 3:
+1−2, 3−4, 5−6
+1−6, 2−5, 3−4
+1−2, 3−6, 4−5
+1−4, 2−3, 5−6
+1−6, 2−3, 4−5
+
+4 Number of different ways (N+1) factors can be completely parenthesized.
+N = 1: (ab)
+N = 2: (a(bc))    |   ((ab)c)
+N = 3: (((ab)c)d)   |   (a((bc)d))  |   ((a(bc))d)  |   ((ab)(cd))  |   (a(b(cd)))
+
+5. Count of structurally unique BSTs with N keys is Cn
+6. Number of ways to reach from bottom left to the top right without crossing the diagonal and always point right or
+left is Nth Cn.
