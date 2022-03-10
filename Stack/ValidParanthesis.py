@@ -1,20 +1,21 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         mappings = {
-            ')': '(',
+            ']': '[',
             '}': '{',
-            ']': '['
+            ')': '('
         }
 
         stack = []
-        for ch in s:
-            if ch not in mappings:
-                stack.append(ch)
+
+        for bracket in s:
+            if bracket not in mappings:
+                stack.append(bracket)
             else:
-                if stack and stack[-1] == mappings[ch]:  # for case s = "["
+                if stack and mappings[bracket] == stack[-1]:
                     stack.pop()
-                else:   # for case s = ")(){}"
-                    return False
+                else:
+                    stack.append(bracket)
 
         return len(stack) == 0
 

@@ -1,7 +1,7 @@
 class Solution:
     def dailyTemperatures(self, T):
         """
-        Algorithm:
+        Algorithm: Monotonic stack: Form a decreasing stack
         for every element -
             - if stack is empty, insert index, value into stack
             - if not, if current temp is greater than stack top element value, pop from stack one by one
