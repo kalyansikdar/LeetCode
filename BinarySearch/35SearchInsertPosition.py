@@ -19,4 +19,25 @@ class Solution:
             else:
                 return self.binarySearch(nums, target, mid + 1, end)
 
+        def findInsertPosition(self, nums, start, end, target):
+            # OWN method: Focus is to find the insert position. If mid-1 is less and mid+1 is larger, that's
+            # the position but within that condition, should the insert position is before mid or after mid
+            # like this ex: [1, 3, 5], target = 4. Here, (mid-1) < 4 < (mid+1). But it has to be placed after 3.
+            # hence, the if condition within the if condition is needed.
+            mid = start + (end - start) // 2
+
+            while start <= end:
+                if mid > 0 and mid < len(nums) - 1 and nums[mid - 1] < target and nums[mid + 1] > target:
+                    if target > nums[mid]:
+                        return mid + 1
+                    else:
+                        return mid
+                else:
+                    if target > nums[mid]:
+                        return self.findInsertPosition(nums, mid + 1, end, target)
+                    else:
+                        return self.findInsertPosition(nums, start, mid - 1, target)
+
+            return start
+
         return start
