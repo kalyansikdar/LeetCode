@@ -6,7 +6,7 @@ class Solution:
             else:
                 return -1
         else:
-            return self.binary_search_iterative(0, len(nums) - 1, nums, target)
+            return self.binary_search(0, len(nums) - 1, nums, target)
 
     def binary_search_iterative(self, start, end, nums, target):
         index = -1
@@ -25,7 +25,7 @@ class Solution:
         return index
 
     def binary_search(self, start, end, nums, target):
-        mid = (start + end) // 2
+        mid = start + (end - start) // 2
 
         while start <= end:
             if nums[mid] == target:
