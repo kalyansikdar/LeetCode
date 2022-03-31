@@ -3,6 +3,9 @@ class Solution:
         self.result = set()
 
     def removeInvalidParentheses(self, s):
+        """
+        This solution is TLE for Python in leetcode. But same java code works.
+        """
         # gets the number of parentheses to be removed
         minimalRemovalNeeded = self.getMinimalRemoval(s)
 
@@ -11,6 +14,9 @@ class Solution:
         return self.result
 
     def _helper(self, s, minRemovalNeededNow):
+        # ignore duplicate element result, though set already ensures it
+        if s in self.result:
+            return
         # when no parenthesis is to be removed anymore
         if minRemovalNeededNow == 0:
             # if the s is still valid, add to the result

@@ -13,6 +13,18 @@ class Solution:
             max_val = maxVal_tillNow
         return max_val
 
+    def maxSubArray_better(self, nums) -> int:
+        # Superb solution: Did it myself.
+        # TC: O(N)
+        maxTillEnd = nums[0]
+        maxTillHere = nums[0]
+
+        for i in range(1, len(nums)):
+            maxTillHere = max(nums[i], maxTillHere + nums[i])
+            maxTillEnd = max(maxTillHere, maxTillEnd)
+
+        return maxTillEnd
+
 
 solution = Solution()
 nums = [-2,1,-3,4,-1,2,1,-5,4]
