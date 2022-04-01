@@ -14,25 +14,24 @@ class Solution:
 
         return nums
 
-    def rotate(self, nums, k: int) -> None:
+    def rotate(self, nums: List[int], k: int) -> None:
         """
         Do not return anything, modify nums in-place instead.
         """
+        # reverse the array [7,6,5,4,3,2,1]
+        # reverse the first k elements (index: k-1), reverse the rest k to n elements (index: (n-k) -> n)
+        # base case
         if len(nums) == 1:
             return nums
-        # in case k is greater than len(nums) then we need to rotate only k%len(nums) time.. ex nums = [1,2], k = 3,
-        # then need to rotate only 3%2 = 1 time
-        k = k % len(nums)
-        print(k)
 
-        self.reverse(nums, 0, len(nums) - k - 1)
-        print(nums)
-        self.reverse(nums, len(nums) - k, len(nums) - 1)
-        print(nums)
-        self.reverse(nums, 0, len(nums) - 1)
-        print(nums)
+        n = len(nums)
+        # if k is larger than the length of array. Ex, k = 10, len = 7. Then the array has to be rotated actually 3
+        # times, which is equivalent to rotating 3 times: 10 % 7 = 3
+        k = k % n
 
-        return nums
+        self.reverse(nums, 0, n - 1)
+        self.reverse(nums, 0, k - 1)
+        self.reverse(nums, k, n - 1)
 
     def reverse(self, nums, start, end):
         while start < end:

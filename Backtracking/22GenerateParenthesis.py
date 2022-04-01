@@ -31,16 +31,12 @@ class Solution(object):
         return result
 
     def backtrack(self, n, path, open, close, result):
-        if (
-            len(path) == 2 * n
-        ):  # When the size of the string is 2n, it's valid parenthesis formation, add to result
+        if len(path) == 2 * n:  # When the size of the string is 2n, it's valid parenthesis formation, add to result
             result.append(path)
 
         if open < n:
             self.backtrack(n, path + "(", open + 1, close, result)
-        if (
-            close < open
-        ):  # bracket cannot be closed before it's opened, hence, close will always be smaller
+        if close < open:  # bracket cannot be closed before it's opened, hence, close will always be smaller
             self.backtrack(n, path + ")", open, close + 1, result)
 
 
