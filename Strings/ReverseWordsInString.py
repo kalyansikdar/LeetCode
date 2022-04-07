@@ -1,8 +1,8 @@
 class Solution:
-    def reverseList(self, word, start, end):
+    def reverseList(self, words, start, end):
         # reverse each element in a list
         while start < end:
-            word[start], word[end] = word[end], word[start]
+            words[start], words[end] = words[end], words[start]
             start += 1
             end -= 1
 

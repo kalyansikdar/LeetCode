@@ -7,6 +7,8 @@ class ListNode:
 
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+        # take two pointers, move one till n. If it reached end then this case: [1,2,3], n = 3
+        # Once one pointer is moved n times, move both together till
         if not head:
             return None
 
