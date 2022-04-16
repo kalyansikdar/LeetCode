@@ -42,23 +42,25 @@ class Solution:
 
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         """
-        Time complexity is O(n), space complexity O(h)
+        Time complexity: O(N): Traversing each node once
+        Space complexity: O(logn/h) for recursion call stack
         """
+        # base case
         if not root:
             return None
-
+        # if the node is either p or q, return p or q
+        # This has to be the first condition, else if leaf node is p or q, it won't be captured
         if root == p or root == q:
             return root
 
+        # go left and right
         left = self.lowestCommonAncestor(root.left, p, q)
         right = self.lowestCommonAncestor(root.right, p, q)
 
-        # at leaf nodes, left and right both are null, it will return right(in this code), which is null
-        # if left is null, go for right node result
-        # if right is null go for left node result
-        if not left:
-            return right
-        if not right:
-            return left
-        # so when left and right both have values, it will return root
-        return root
+        # if both left and right subtrees holds either nodes, root is the common ancestor
+        if left and right:
+            return root
+
+        # if either is found on left and right, return the found side
+        if left or right:
+            return left or right
