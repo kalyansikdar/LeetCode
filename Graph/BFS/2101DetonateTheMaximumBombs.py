@@ -2,7 +2,7 @@ class Solution:
     def maximumDetonation(self, bombs) -> int:
         # Algorithm:
         # Calculate adjacency map of the bombs
-        # Using BFS, find out how many bombs can be denonated for each bomb
+        # Using BFS, find out how many bombs can be detonated for each bomb
 
         adjMap = self.getNeighbors(bombs)
         result = 0
