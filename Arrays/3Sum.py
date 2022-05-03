@@ -5,7 +5,8 @@ class Solution:
 
         # we do not need to try the last 2 because there is no place to assign start and end
         for i in range(len(nums) - 2):
-            # since the list is sorted, if any number is > 0, then adding with subsequent number never result to 0
+            # since the list is sorted, if any number is > 0, then all subsequent numbers would also be greater than 0,
+            # adding with subsequent number never result to 0
             if nums[i] > 0:
                 break
 
@@ -42,6 +43,11 @@ class Solution:
 solution = Solution()
 nums = [-1, 0, 1, 2, -1, -4]
 # Below example is for duplicate issue
-# nums = [-2, 0, 0, 2, 2]
-result = solution.threeSum(nums)
-print(result)
+nums = [-2, 0, 0, 2, 2]
+assert solution.threeSum(nums) == [[-2, 0, 2]]
+nums = [1, -1, -1, 0]
+assert solution.threeSum(nums) == [[-1, 0, 1]]
+nums = [-4, -2, 1, -5, -4, -4, 4, -2, 0, 4, 0, -2, 3, 1, -5, 0]
+assert solution.threeSum(nums) == [[-5, 1, 4], [-4, 0, 4], [-4, 1, 3], [-2, -2, 4], [-2, 1, 1], [0, 0, 0]]
+nums = [-1, 0, 1, 2, -1, -4]
+assert solution.threeSum(nums) == [[-1, -1, 2], [-1, 0, 1]]

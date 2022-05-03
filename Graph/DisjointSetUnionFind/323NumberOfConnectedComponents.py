@@ -9,6 +9,7 @@ class Solution:
     def countComponents(self, n: int, edges: List[List[int]]):
         # initially before union, all nodes were disconnected, hence, number of disconnected graphs are equal to number
         # of nodes
+        # Disjoint set Union find is used for finding cycle/number of components in undirected graphs
 
         result = n
         for node1, node2 in edges:

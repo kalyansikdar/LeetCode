@@ -12,16 +12,12 @@ class Solution:
             if nums[mid] == target:
                 return mid
             elif nums[start] <= nums[mid]:  # left side is strictly increasing
-                if (
-                    target <= nums[mid] and target >= nums[start]
-                ):  # if the target falls within start to end
+                if target <= nums[mid] and target >= nums[start]:  # if the target falls within start to end
                     return self.binarySearch(nums, target, start, mid - 1)
                 else:
                     return self.binarySearch(nums, target, mid + 1, end)
             else:  # right side is strictly increasing
-                if (
-                    target >= nums[mid] and target <= nums[end]
-                ):  # if target falls within mid to end
+                if target >= nums[mid] and target <= nums[end]:  # if target falls within mid to end
                     return self.binarySearch(nums, target, mid + 1, end)
                 else:
                     return self.binarySearch(nums, target, start, mid - 1)
